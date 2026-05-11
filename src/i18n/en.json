@@ -1,0 +1,17 @@
+{
+  "form.email": "Email",
+  "form.email_placeholder": "you@company.com",
+  "form.name": "Name",
+  "form.name_placeholder": "How should we call you",
+  "form.message": "Message",
+  "form.message_placeholder": "Tell us about your task",
+  "form.submit": "Submit",
+  "form.sending": "Sending…",
+  "form.success": "Thanks! We will get back to you within a day.",
+  "form.error": "Something went wrong. Please try again.",
+  "cta.telegram": "Open in Telegram",
+  "cta.email": "Email us",
+  "cta.phone": "Call us",
+  "nav.menu": "Menu",
+  "footer.made_with": "Made with"
+}

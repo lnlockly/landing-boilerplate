@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f5fcec;
+  --color-brand-100: #e8f8cf;
+  --color-brand-500: #a6f25c;
+  --color-brand-600: #8ad938;
+  --color-brand-700: #6cb226;
+
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --muted: #a3a3a3;
+  --surface: #141414;
+  --border: rgba(255, 255, 255, 0.08);
+  --primary: #a6f25c;
+  --primary-fg: #0a0a0a;
+  --accent: #38bdf8;
+}
+
+:root[data-theme='corporate'] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --fg: #0f172a;
+  --muted: #64748b;
+  --surface: #f8fafc;
+  --border: rgba(15, 23, 42, 0.08);
+  --primary: #1e40af;
+  --primary-fg: #ffffff;
+  --accent: #0ea5e9;
+}
+
+:root[data-theme='minimal'] {
+  color-scheme: light;
+  --bg: #fafaf9;
+  --fg: #0c0a09;
+  --muted: #78716c;
+  --surface: #ffffff;
+  --border: rgba(12, 10, 9, 0.1);
+  --primary: #0c0a09;
+  --primary-fg: #fafaf9;
+  --accent: #0c0a09;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.05); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.font-display { font-family: var(--font-display); }
+.font-serif { font-family: var(--font-serif); }
+.font-mono { font-family: var(--font-mono); }
+
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }

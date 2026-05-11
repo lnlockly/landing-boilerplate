@@ -1,0 +1,17 @@
+{
+  "form.email": "Email",
+  "form.email_placeholder": "you@company.com",
+  "form.name": "Имя",
+  "form.name_placeholder": "Как к вам обращаться",
+  "form.message": "Сообщение",
+  "form.message_placeholder": "Расскажите о задаче",
+  "form.submit": "Отправить",
+  "form.sending": "Отправляем…",
+  "form.success": "Спасибо! Мы свяжемся с вами в течение дня.",
+  "form.error": "Что-то пошло не так. Попробуйте ещё раз.",
+  "cta.telegram": "Открыть в Telegram",
+  "cta.email": "Написать на email",
+  "cta.phone": "Позвонить",
+  "nav.menu": "Меню",
+  "footer.made_with": "Сделано с"
+}

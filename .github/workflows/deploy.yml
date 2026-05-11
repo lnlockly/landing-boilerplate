@@ -1,0 +1,69 @@
+# Reusable build+publish workflow for landing-boilerplate forks.
+#
+# Behavior:
+#   - on push to main: install, typecheck, test, build → upload dist/ artifact
+#   - on tag v*: same + GitHub Release
+#   - opt-in self-hosted runner deploy: set repo secret SELF_HOSTED=1 to enable
+#     the deploy job (otherwise the platform's runtime-supervisor takes over).
+#
+# This file follows the AgentFlow CI-first deploy policy
+# (memory: feedback_agentflow_use_ci.md). Do NOT bypass with scp/rsync.
+
+name: build-and-deploy
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://example.com' }}
+        run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 14
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && vars.DEPLOY_TARGET == 'self-hosted'
+    runs-on: [self-hosted, landing]
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Sync to webroot
+        run: |
+          set -euo pipefail
+          TARGET="${LANDING_WEBROOT:-/var/www/landing}"
+          sudo rsync -a --delete dist/ "$TARGET/"
+          echo "Deployed to $TARGET"
