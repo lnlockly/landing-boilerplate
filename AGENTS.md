@@ -157,7 +157,7 @@ And extend `src/config/schema.ts` with a `caseStudiesSectionSchema` plus a `case
 - External `<img src="https://source.unsplash.com/…">` placeholders — generate real images via `multimodal.image_generate` and save under `public/`.
 - 0 `<img>` tags / 0 `<a href>` CTAs in the rendered DOM — gate fails. The default config already includes hero image + CTAs; don't strip them.
 - Generic filler text ("discover the power of", "modern landing premium") — bring real copy from the brief.
-- Title still equal to `"Landing Boilerplate"`/`"Vite + React"` — `seo.title` MUST be branded.
+- Title still equal to `"Landing Boilerplate"`/`"Vite + React"` — `seo.title` MUST be branded. The static `dist/index.html` is rewritten at build time by `src/build/seo-inject-plugin.ts`, so the brand must come from `seo.title` in `landing.config.ts`; do NOT edit `index.html` directly.
 
 ## Pre-REPLY sanity check
 

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a0a0a" />
 
-    <!-- These get rewritten at runtime from src/config/landing.config.ts SEO block -->
+    <!-- Title + meta description + og:* are rewritten at BUILD time
+         by the seo-inject Vite plugin from src/config/landing.config.ts
+         (see src/build/seo-inject-plugin.ts). The defaults below ship to
+         dev server + `vite preview` only; production `dist/index.html`
+         always reflects the config. -->
     <title>Landing Boilerplate</title>
     <meta name="description" content="Production landing boilerplate" />
 
