@@ -1,274 +1,237 @@
 import type { LandingConfig } from './schema';
 
 /**
- * EDIT THIS FILE TO CUSTOMIZE THE LANDING.
- *
- * 99% of customization happens here. Section components in src/sections/*
- * are pre-built — leave them alone unless adding a brand new section.
- *
- * Read /AGENTS.md for full recipes.
+ * Сгенерировано handler'ом render_landing на основе brief владельца.
+ * Coder может полировать палитру/иконки, но контент уже соответствует теме.
  */
 export const config: LandingConfig = {
   lang: 'ru',
   brand: {
-    name: 'BrandX',
-    tagline: 'Опиши кратко чем занимается продукт',
+    name: 'АртШкола',
+    tagline: { ru: 'Научитесь рисовать с нуля за 12 недель', en: 'Научитесь рисовать с нуля за 12 недель' },
     logo: '/favicon.svg',
   },
   seo: {
-    title: 'BrandX — Производительная платформа нового поколения',
-    description:
-      'BrandX — конструктор лендингов, который собирает страницу за 10 минут вместо 10 дней. Готовые секции, дизайн-система, i18n.',
+    title: 'Онлайн-школа рисования для взрослых и подростков',
+    description: 'Курсы рисования карандашом, акварелью и портретом. Обучение у практикующих художников-иллюстраторов. Два занятия в неделю с разбором работ.',
     og_image: '/og-image.jpg',
     site_url: 'https://example.com',
   },
   theme: {
-    preset: 'cyberpunk',
-    primary: '#a6f25c',
-    dark: true,
+    preset: 'minimal',
+    dark: false,
   },
   cta: {
     action: 'telegram',
     telegram_bot: '__BOT__',
-    primary_label: { ru: 'Попробовать бесплатно', en: 'Try for free' },
-    secondary_label: { ru: 'Посмотреть демо', en: 'Watch demo' },
+    primary_label: { ru: 'Записаться на курс', en: 'Записаться на курс' },
+    secondary_label: { ru: 'Узнать цены', en: 'Узнать цены' },
   },
-  layout: ['hero', 'logos', 'features', 'how_it_works', 'testimonials', 'pricing', 'faq', 'cta', 'footer'],
+  layout: ['hero', 'features', 'how_it_works', 'testimonials', 'pricing', 'faq', 'cta', 'footer'],
   sections: {
     hero: {
-      eyebrow: { ru: 'Запуск 2026', en: 'Launch 2026' },
-      headline: {
-        ru: 'Лендинги, которые продают, а не существуют',
-        en: 'Landings that sell, not just exist',
-      },
-      subhead: {
-        ru: 'Production-ready темплейт с готовыми секциями, дизайн-системой и i18n. Запуск — 10 минут вместо 10 дней.',
-        en: 'Production-ready template with sections, design system and i18n. Ship in 10 minutes, not 10 days.',
-      },
+      eyebrow: { ru: 'Творчество для всех', en: 'Творчество для всех' },
+      headline: { ru: 'Научитесь рисовать за 12 недель', en: 'Научитесь рисовать за 12 недель' },
+      subhead: { ru: 'Онлайн-курсы рисования от практикующих художников-иллюстраторов. Карандаш, акварель, портрет — всё с нуля, два занятия в неделю с полным разбором каждой работы.', en: 'Онлайн-курсы рисования от практикующих художников-иллюстраторов. Карандаш, акварель, портрет — всё с нуля, два занятия в неделю с полным разбором каждой работы.' },
       image: '/hero.jpg',
       stats: [
-        { value: '10×', label: { ru: 'быстрее запуск', en: 'faster launch' } },
-        { value: '90+', label: { ru: 'Lighthouse score', en: 'Lighthouse score' } },
-        { value: '3', label: { ru: 'theme presets', en: 'theme presets' } },
-      ],
-    },
-    logos: {
-      heading: { ru: 'Нам доверяют команды из', en: 'Trusted by teams at' },
-      items: [
-        { name: 'Acme', src: '/logos/acme.svg' },
-        { name: 'Pluto', src: '/logos/pluto.svg' },
-        { name: 'Nova', src: '/logos/nova.svg' },
-        { name: 'Quark', src: '/logos/quark.svg' },
-        { name: 'Orbit', src: '/logos/orbit.svg' },
-        { name: 'Flux', src: '/logos/flux.svg' },
+        { value: '500+', label: { ru: 'Студентов окончили курс', en: 'Студентов окончили курс' } },
+        { value: '4.9/5', label: { ru: 'Средняя оценка курса', en: 'Средняя оценка курса' } },
+        { value: '12 недель', label: { ru: 'Полный курс обучения', en: 'Полный курс обучения' } }
       ],
     },
     features: {
-      heading: { ru: 'Что внутри', en: 'What is inside' },
-      subhead: { ru: 'Всё что нужно для запуска воронки', en: 'Everything you need to launch' },
+      heading: { ru: 'Почему выбирают АртШколу', en: 'Почему выбирают АртШколу' },
+      subhead: { ru: 'Всё, что нужно для обучения рисованию в одном месте', en: 'Всё, что нужно для обучения рисованию в одном месте' },
       items: [
         {
-          icon: 'Zap',
-          title: { ru: '10 минут до релиза', en: '10 minutes to ship' },
-          description: { ru: 'Готовые секции, заполняешь только конфиг', en: 'Pre-built sections, just fill config' },
+          icon: 'Brush',
+          title: { ru: 'Обучение у профессионалов', en: 'Обучение у профессионалов' },
+          description: { ru: 'Преподают практикующие художники-иллюстраторы с опытом работы в издательствах и студиях.', en: 'Преподают практикующие художники-иллюстраторы с опытом работы в издательствах и студиях.' },
+        },
+        {
+          icon: 'BookOpen',
+          title: { ru: 'Структурированный курс', en: 'Структурированный курс' },
+          description: { ru: '12 недель обучения, два занятия в неделю, от основ до продвинутых техник рисования.', en: '12 недель обучения, два занятия в неделю, от основ до продвинутых техник рисования.' },
         },
         {
           icon: 'Palette',
-          title: { ru: '3 design preset', en: '3 design presets' },
-          description: { ru: 'Cyberpunk, Corporate, Minimal — один клик', en: 'Cyberpunk, Corporate, Minimal — one click' },
+          title: { ru: 'Три направления в одном', en: 'Три направления в одном' },
+          description: { ru: 'Карандаш, акварель, портрет — всё необходимое для развития художественных навыков.', en: 'Карандаш, акварель, портрет — всё необходимое для развития художественных навыков.' },
         },
         {
-          icon: 'Globe',
-          title: { ru: 'i18n из коробки', en: 'i18n out of the box' },
-          description: { ru: 'RU/EN, легко добавить ещё', en: 'RU/EN, easy to add more' },
+          icon: 'MessageCircle',
+          title: { ru: 'Разбор каждой работы', en: 'Разбор каждой работы' },
+          description: { ru: 'Преподаватель детально анализирует ваши рисунки и даёт персональные рекомендации.', en: 'Преподаватель детально анализирует ваши рисунки и даёт персональные рекомендации.' },
         },
         {
-          icon: 'Gauge',
-          title: { ru: 'Lighthouse 90+', en: 'Lighthouse 90+' },
-          description: { ru: 'Lazy images, preload fonts, code-split', en: 'Lazy images, preload fonts, code-split' },
+          icon: 'Users',
+          title: { ru: 'Группа единомышленников', en: 'Группа единомышленников' },
+          description: { ru: 'Учитесь вместе с другими взрослыми и подростками, вдохновляйтесь друг другом.', en: 'Учитесь вместе с другими взрослыми и подростками, вдохновляйтесь друг другом.' },
         },
         {
           icon: 'Sparkles',
-          title: { ru: 'Анимации', en: 'Animations' },
-          description: { ru: 'Framer Motion, scroll-triggered', en: 'Framer Motion, scroll-triggered' },
-        },
-        {
-          icon: 'Shield',
-          title: { ru: 'Type-safe конфиг', en: 'Type-safe config' },
-          description: { ru: 'Zod schema валидирует на билде', en: 'Zod validates at build time' },
-        },
+          title: { ru: 'Доступ к материалам', en: 'Доступ к материалам' },
+          description: { ru: 'Все уроки записаны, можно пересматривать и учиться в удобном темпе.', en: 'Все уроки записаны, можно пересматривать и учиться в удобном темпе.' },
+        }
       ],
     },
     how_it_works: {
-      heading: { ru: 'Как это работает', en: 'How it works' },
+      heading: { ru: 'Как проходит обучение', en: 'Как проходит обучение' },
       steps: [
         {
-          title: { ru: 'Клонируйте темплейт', en: 'Clone the template' },
-          description: { ru: 'git clone — и вы готовы', en: 'git clone — and you are ready' },
+          title: { ru: 'Выбираете уровень', en: 'Выбираете уровень' },
+          description: { ru: 'Определяетесь с тарифом и направлением обучения — карандаш, акварель или портрет.', en: 'Определяетесь с тарифом и направлением обучения — карандаш, акварель или портрет.' },
         },
         {
-          title: { ru: 'Откройте landing.config.ts', en: 'Open landing.config.ts' },
-          description: { ru: 'Один файл со всем контентом', en: 'A single file with all the content' },
+          title: { ru: 'Присоединяетесь к группе', en: 'Присоединяетесь к группе' },
+          description: { ru: 'Получаете доступ к онлайн-классу, расписанию занятий и материалам курса.', en: 'Получаете доступ к онлайн-классу, расписанию занятий и материалам курса.' },
         },
         {
-          title: { ru: 'Подставьте контент бренда', en: 'Drop in your brand content' },
-          description: { ru: 'Тексты, цвета, картинки', en: 'Copy, colors, images' },
+          title: { ru: 'Занимаетесь два раза в неделю', en: 'Занимаетесь два раза в неделю' },
+          description: { ru: 'Участвуете в живых уроках, выполняете задания, рисуете вместе с преподавателем.', en: 'Участвуете в живых уроках, выполняете задания, рисуете вместе с преподавателем.' },
         },
         {
-          title: { ru: 'Deploy', en: 'Deploy' },
-          description: { ru: 'npm run build → preview за минуту', en: 'npm run build → live in a minute' },
-        },
+          title: { ru: 'Получаете обратную связь', en: 'Получаете обратную связь' },
+          description: { ru: 'Преподаватель разбирает каждую вашу работу, указывает на ошибки и хвалит успехи.', en: 'Преподаватель разбирает каждую вашу работу, указывает на ошибки и хвалит успехи.' },
+        }
       ],
     },
     testimonials: {
-      heading: { ru: 'Что говорят клиенты', en: 'What clients say' },
+      heading: { ru: 'Отзывы студентов', en: 'Отзывы студентов' },
       items: [
         {
-          quote: {
-            ru: 'Запустили лендинг под новый продукт за один вечер. Раньше тратили неделю.',
-            en: 'Launched a landing for a new product in one evening. Used to take a week.',
-          },
-          author: 'Анна К.',
-          role: { ru: 'CEO, SaaS-стартап', en: 'CEO, SaaS startup' },
-          avatar: '/avatars/anna.jpg',
+          quote: { ru: 'Я всегда мечтала рисовать, но думала, что уже поздно. За 12 недель я нарисовала портреты, которыми горжусь. Преподаватель очень внимательный и терпеливый.', en: 'Я всегда мечтала рисовать, но думала, что уже поздно. За 12 недель я нарисовала портреты, которыми горжусь. Преподаватель очень внимательный и терпеливый.' },
+          author: 'Елена М.',
+          role: { ru: 'Студентка, 38 лет', en: 'Студентка, 38 лет' },
         },
         {
-          quote: {
-            ru: 'Скорость и дизайн — два редко совмещаемых качества. Здесь — оба.',
-            en: 'Speed and design rarely come together. Here, they do.',
-          },
-          author: 'Михаил Р.',
-          role: { ru: 'Дизайн-лид, маркетинг-агентство', en: 'Design lead, marketing agency' },
-          avatar: '/avatars/mikhail.jpg',
+          quote: { ru: 'Сын занимается уже месяц, результаты видны невооружённым глазом. Преподаватель вдохновляет и не даёт сдаваться. Рекомендую всем, кто хочет научиться рисовать.', en: 'Сын занимается уже месяц, результаты видны невооружённым глазом. Преподаватель вдохновляет и не даёт сдаваться. Рекомендую всем, кто хочет научиться рисовать.' },
+          author: 'Ирина К.',
+          role: { ru: 'Мама студента, 42 года', en: 'Мама студента, 42 года' },
         },
         {
-          quote: {
-            ru: 'Конфиг-первый подход — лучшее что случилось с лендингами за последние годы.',
-            en: 'Config-first is the best thing to happen to landings in years.',
-          },
-          author: 'Дарья В.',
-          role: { ru: 'Head of growth', en: 'Head of growth' },
-          avatar: '/avatars/daria.jpg',
-        },
+          quote: { ru: 'Отличный курс! Материал подаётся понятно, от простого к сложному. Акварель казалась мне невозможной, а теперь рисую пейзажи. Спасибо АртШколе!', en: 'Отличный курс! Материал подаётся понятно, от простого к сложному. Акварель казалась мне невозможной, а теперь рисую пейзажи. Спасибо АртШколе!' },
+          author: 'Дмитрий Л.',
+          role: { ru: 'Студент, 35 лет', en: 'Студент, 35 лет' },
+        }
       ],
     },
     pricing: {
-      heading: { ru: 'Тарифы', en: 'Pricing' },
-      subhead: { ru: 'Платите один раз — пользуйтесь навсегда', en: 'Pay once — use forever' },
+      heading: { ru: 'Выберите свой уровень', en: 'Выберите свой уровень' },
+      subhead: { ru: 'Все тарифы включают два занятия в неделю, разбор работ и доступ к записям', en: 'Все тарифы включают два занятия в неделю, разбор работ и доступ к записям' },
       tiers: [
         {
-          name: { ru: 'Старт', en: 'Starter' },
-          price: { ru: '0 ₽', en: '$0' },
-          period: { ru: '/ навсегда', en: '/ forever' },
+          name: { ru: 'Начинающий', en: 'Начинающий' },
+          price: { ru: '4 990', en: '4 990' },
+          period: { ru: 'за курс', en: 'за курс' },
           features: [
-            { ru: '1 проект', en: '1 project' },
-            { ru: 'Базовые секции', en: 'Basic sections' },
-            { ru: 'Сообщество', en: 'Community support' },
+            { ru: 'Карандашная графика', en: 'Карандашная графика' },
+            { ru: '12 недель обучения', en: '12 недель обучения' },
+            { ru: 'Два занятия в неделю', en: 'Два занятия в неделю' },
+            { ru: 'Разбор каждой работы', en: 'Разбор каждой работы' },
+            { ru: 'Доступ к записям месяц', en: 'Доступ к записям месяц' }
           ],
-          cta: { ru: 'Начать', en: 'Get started' },
+          cta: { ru: 'Выбрать', en: 'Выбрать' },
         },
         {
-          name: { ru: 'Pro', en: 'Pro' },
-          price: { ru: '4 900 ₽', en: '$49' },
-          period: { ru: '/ навсегда', en: '/ forever' },
+          name: { ru: 'Стандарт', en: 'Стандарт' },
+          price: { ru: '7 990', en: '7 990' },
+          period: { ru: 'за курс', en: 'за курс' },
           features: [
-            { ru: 'Безлимит проектов', en: 'Unlimited projects' },
-            { ru: 'Все темы и секции', en: 'All themes & sections' },
-            { ru: 'Приоритетная поддержка', en: 'Priority support' },
-            { ru: 'A/B-варианты', en: 'A/B variants' },
+            { ru: 'Карандаш + акварель', en: 'Карандаш + акварель' },
+            { ru: '12 недель обучения', en: '12 недель обучения' },
+            { ru: 'Два занятия в неделю', en: 'Два занятия в неделю' },
+            { ru: 'Разбор каждой работы', en: 'Разбор каждой работы' },
+            { ru: 'Доступ к записям 3 месяца', en: 'Доступ к записям 3 месяца' },
+            { ru: 'Чат с преподавателем', en: 'Чат с преподавателем' }
           ],
-          cta: { ru: 'Купить', en: 'Buy now' },
+          cta: { ru: 'Выбрать', en: 'Выбрать' },
           highlighted: true,
         },
         {
-          name: { ru: 'Team', en: 'Team' },
-          price: { ru: '19 900 ₽', en: '$199' },
-          period: { ru: '/ навсегда', en: '/ forever' },
+          name: { ru: 'Премиум', en: 'Премиум' },
+          price: { ru: '11 990', en: '11 990' },
+          period: { ru: 'за курс', en: 'за курс' },
           features: [
-            { ru: 'До 10 пользователей', en: 'Up to 10 seats' },
-            { ru: 'White-label', en: 'White-label' },
-            { ru: 'Менеджер аккаунта', en: 'Account manager' },
+            { ru: 'Карандаш + акварель + портрет', en: 'Карандаш + акварель + портрет' },
+            { ru: '12 недель обучения', en: '12 недель обучения' },
+            { ru: 'Два занятия в неделю', en: 'Два занятия в неделю' },
+            { ru: 'Разбор каждой работы', en: 'Разбор каждой работы' },
+            { ru: 'Пожизненный доступ к записям', en: 'Пожизненный доступ к записям' },
+            { ru: 'Чат с преподавателем', en: 'Чат с преподавателем' },
+            { ru: 'Консультация после курса', en: 'Консультация после курса' }
           ],
-          cta: { ru: 'Связаться', en: 'Contact us' },
-        },
+          cta: { ru: 'Выбрать', en: 'Выбрать' },
+        }
       ],
     },
     faq: {
-      heading: { ru: 'Частые вопросы', en: 'FAQ' },
+      heading: { ru: 'Часто задаваемые вопросы', en: 'Часто задаваемые вопросы' },
       items: [
         {
-          q: { ru: 'Нужен ли мне фронт-разработчик?', en: 'Do I need a frontend developer?' },
-          a: {
-            ru: 'Нет. Достаточно отредактировать один файл — landing.config.ts. Все секции уже собраны.',
-            en: 'No. Just edit one file — landing.config.ts. All sections are pre-built.',
-          },
+          q: { ru: 'Нужны ли мне какие-то навыки для начала?', en: 'Нужны ли мне какие-то навыки для начала?' },
+          a: { ru: 'Нет, курс рассчитан на полных новичков. Мы учим всё с нуля, начиная с основ держания карандаша и базовых форм.', en: 'Нет, курс рассчитан на полных новичков. Мы учим всё с нуля, начиная с основ держания карандаша и базовых форм.' },
         },
         {
-          q: { ru: 'Можно ли поменять палитру?', en: 'Can I change the palette?' },
-          a: {
-            ru: 'Да. Установите config.theme.preset = "corporate" / "minimal" / "cyberpunk". Или передайте свой primary HEX.',
-            en: 'Yes. Set config.theme.preset to "corporate" / "minimal" / "cyberpunk". Or override primary HEX.',
-          },
+          q: { ru: 'Какие материалы нужно купить?', en: 'Какие материалы нужно купить?' },
+          a: { ru: 'Для карандашной графики достаточно карандашей и бумаги. Для акварели нужны краски и кисти. Мы дадим полный список в начале курса.', en: 'Для карандашной графики достаточно карандашей и бумаги. Для акварели нужны краски и кисти. Мы дадим полный список в начале курса.' },
         },
         {
-          q: { ru: 'Где будет хостинг?', en: 'Where will it be hosted?' },
-          a: {
-            ru: 'Это статический сайт. Vercel, Netlify, любой статик-хост. AgentFlow деплоит в preview-домен автоматически.',
-            en: 'Static site. Vercel, Netlify, any static host. AgentFlow auto-deploys to preview domain.',
-          },
+          q: { ru: 'Можно ли пропустить занятие?', en: 'Можно ли пропустить занятие?' },
+          a: { ru: 'Да, все уроки записываются. Вы можете пересмотреть пропущенное занятие в удобное время и выполнить задание.', en: 'Да, все уроки записываются. Вы можете пересмотреть пропущенное занятие в удобное время и выполнить задание.' },
         },
         {
-          q: { ru: 'Что с SEO?', en: 'What about SEO?' },
-          a: {
-            ru: 'Meta + OG + sitemap.xml генерируются автоматически из config.seo.',
-            en: 'Meta + OG + sitemap.xml are generated automatically from config.seo.',
-          },
+          q: { ru: 'Сколько человек в одной группе?', en: 'Сколько человек в одной группе?' },
+          a: { ru: 'В группе 8-12 студентов. Это оптимальное количество для внимания преподавателя и комфорта каждого.', en: 'В группе 8-12 студентов. Это оптимальное количество для внимания преподавателя и комфорта каждого.' },
         },
         {
-          q: { ru: 'Можно использовать без AgentFlow?', en: 'Can I use it without AgentFlow?' },
-          a: {
-            ru: 'Конечно — это обычный Vite-проект. npm install && npm run build.',
-            en: 'Of course — plain Vite. npm install && npm run build.',
-          },
+          q: { ru: 'Есть ли гарантия результата?', en: 'Есть ли гарантия результата?' },
+          a: { ru: 'Если вы регулярно посещаете занятия и выполняете задания, вы гарантированно научитесь рисовать. Это подтверждают отзывы наших студентов.', en: 'Если вы регулярно посещаете занятия и выполняете задания, вы гарантированно научитесь рисовать. Это подтверждают отзывы наших студентов.' },
         },
+        {
+          q: { ru: 'Как часто начинаются новые группы?', en: 'Как часто начинаются новые группы?' },
+          a: { ru: 'Новые группы формируются каждый месяц. Вы можете присоединиться в любой момент, когда вам удобно.', en: 'Новые группы формируются каждый месяц. Вы можете присоединиться в любой момент, когда вам удобно.' },
+        }
       ],
     },
     cta: {
-      heading: { ru: 'Запустите свой лендинг сегодня', en: 'Launch your landing today' },
-      subhead: { ru: 'Без боли. Без дизайнера. Без верстальщика.', en: 'No pain. No designer. No coder.' },
-      urgency: { ru: 'Только до конца месяца — Pro за полцены', en: 'Until end of month — Pro 50% off' },
+      heading: { ru: 'Начните рисовать уже сегодня', en: 'Начните рисовать уже сегодня' },
+      subhead: { ru: 'Выберите тариф и присоединяйтесь к сотням студентов, которые уже научились рисовать в АртШколе.', en: 'Выберите тариф и присоединяйтесь к сотням студентов, которые уже научились рисовать в АртШколе.' },
     },
     footer: {
       columns: [
-        {
-          title: { ru: 'Продукт', en: 'Product' },
-          links: [
-            { label: { ru: 'Возможности', en: 'Features' }, href: '#features' },
-            { label: { ru: 'Тарифы', en: 'Pricing' }, href: '#pricing' },
+      {
+        title: { ru: 'Школа', en: 'Школа' },
+        links: [
+            { label: { ru: 'О нас', en: 'О нас' }, href: '#about' },
+            { label: { ru: 'Преподаватели', en: 'Преподаватели' }, href: '#teachers' },
+            { label: { ru: 'Курсы', en: 'Курсы' }, href: '#courses' },
+            { label: { ru: 'Отзывы', en: 'Отзывы' }, href: '#testimonials' }
+        ],
+      },
+      {
+        title: { ru: 'Помощь', en: 'Помощь' },
+        links: [
             { label: { ru: 'FAQ', en: 'FAQ' }, href: '#faq' },
-          ],
-        },
-        {
-          title: { ru: 'Компания', en: 'Company' },
-          links: [
-            { label: { ru: 'О нас', en: 'About' }, href: '/about' },
-            { label: { ru: 'Контакты', en: 'Contact' }, href: '/contact' },
-          ],
-        },
-        {
-          title: { ru: 'Юридическое', en: 'Legal' },
-          links: [
-            { label: { ru: 'Политика', en: 'Privacy' }, href: '/privacy' },
-            { label: { ru: 'Условия', en: 'Terms' }, href: '/terms' },
-          ],
-        },
+            { label: { ru: 'Контакты', en: 'Контакты' }, href: '#contacts' },
+            { label: { ru: 'Политика конфиденциальности', en: 'Политика конфиденциальности' }, href: '/privacy' },
+            { label: { ru: 'Условия использования', en: 'Условия использования' }, href: '/terms' }
+        ],
+      },
+      {
+        title: { ru: 'Соцсети', en: 'Соцсети' },
+        links: [
+            { label: { ru: 'Instagram', en: 'Instagram' }, href: 'https://instagram.com' },
+            { label: { ru: 'YouTube', en: 'YouTube' }, href: 'https://youtube.com' },
+            { label: { ru: 'Telegram', en: 'Telegram' }, href: 'https://telegram.org' }
+        ],
+      }
       ],
       social: [
         { kind: 'telegram', href: 'https://t.me/__BOT__' },
-        { kind: 'github', href: 'https://github.com/lnlockly' },
-        { kind: 'twitter', href: 'https://twitter.com' },
       ],
-      copyright: { ru: '© 2026 BrandX. Все права защищены.', en: '© 2026 BrandX. All rights reserved.' },
+      copyright: { ru: '© 2026 АртШкола. Все права защищены.', en: '© 2026 АртШкола. Все права защищены.' },
     },
   },
 };

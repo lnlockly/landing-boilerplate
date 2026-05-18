@@ -1,0 +1,18 @@
+{
+  "name": "landing-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build --outDir ../dist"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.6.0",
+    "vite": "^7.0.0"
+  }
+}
+
